@@ -1,0 +1,8 @@
+{
+  "CV_AIRPORT": {
+    "target": {
+      "object": "CV_AIRPORT",
+      "schema": "TRAIN03X_HDI_DB"
+    }
+  }
+}

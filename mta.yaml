@@ -1,0 +1,49 @@
+ID: TRAIN03X_PROJ
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: TRAIN03X_2
+   type: hdb
+   path: TRAIN03X_2
+   requires:
+    - name: hdi_TRAIN03X_2
+      properties:
+        TARGET_CONTAINER: ~{hdi-container-name}
+
+
+
+ 
+
+
+    - name: cross-container-service-1
+      group: SERVICE_REPLACEMENTS
+
+      properties:
+        key: ServiceName_1
+        service: ~{the-service-name}
+                          
+
+
+resources:
+ - name: hdi_TRAIN03X_2
+   parameters:
+      config:
+         schema: TRAIN03X_2
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
+
+ - name: hdi_T03X_2
+   properties:
+      hdi-container-name_2: ${service-name}
+   type: com.sap.xs.hdi-container
+
+
+ - name: cross-container-service-1
+   parameters:
+      service-name: L3TRAIN03-q36dknhx09p6ak04-TRAIN03X-hdi_db
+   properties:
+      the-service-name: ${service-name}
+   type: org.cloudfoundry.existing-service
+

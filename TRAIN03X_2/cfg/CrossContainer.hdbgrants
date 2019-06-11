@@ -1,0 +1,16 @@
+{
+  "L3TRAIN03-q36dknhx09p6ak04-TRAIN03X-hdi_db": {
+     "object_owner": {
+           "container_roles": [
+               "access#"
+           ]
+     },
+     "application_user": {
+           "container_roles": [
+               "access"
+           ]
+     }
+  }
+}
+
+
